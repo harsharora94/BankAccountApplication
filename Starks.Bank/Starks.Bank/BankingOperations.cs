@@ -34,5 +34,10 @@
         {
            return  accountRunningId.ToString("00000000");
         }
+
+        public void DeleteAccount(string custId)
+        {
+            
+        }
     }
 }
