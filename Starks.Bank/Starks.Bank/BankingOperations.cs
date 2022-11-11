@@ -44,5 +44,12 @@
         {
             myAccounts.Remove(myAccounts.First(a => a.Id.Equals(accountId)));
         }
+
+        public void Deposit(string accountId, decimal depositAmount)
+        {
+            var account = myAccounts.FirstOrDefault(a => a.Id.Equals(accountId));
+            account.UpdateBalance(depositAmount);
+
+        }
     }
 }

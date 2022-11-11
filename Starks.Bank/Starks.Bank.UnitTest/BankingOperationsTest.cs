@@ -90,5 +90,18 @@ namespace Starks.Bank.UnitTest
 
             Assert.AreEqual(100M, accounDetails.Balance);
         }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIsValid_AmountShould_BeAddedToBalance()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+            
+            bankingOperations.Deposit(accountId, 1000);
+
+            var accounDetails = bankingOperations.GetAccountDetails(accountId);
+            Assert.AreEqual(1100, accounDetails.Balance);
+        }
     }
 }
