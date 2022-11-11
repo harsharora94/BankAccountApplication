@@ -1,16 +1,16 @@
 ﻿namespace Starks.Bank
 {
-    public class BankingOperations
+    public class BankingOperations : IBankingOperations
     {
-        int accountRunningId = 1;
-        List<Account> accounts;
+        readonly int accountRunningId = 1;
+        readonly List<Account> accounts;
         public BankingOperations()
         {
             accounts = new List<Account>();
         }
-        public Account GetAccountDetails(string customerId)
+        public Account GetAccountDetails(string accountId)
         {
-            var account = accounts.FirstOrDefault(a => a.Id.Equals(customerId));
+            var account = accounts.FirstOrDefault(a => a.Id.Equals(accountId));
             if (account == null)
             {
                 throw new InvalidDataException();
@@ -35,7 +35,7 @@
            return  accountRunningId.ToString("00000000");
         }
 
-        public void DeleteAccount(string custId)
+        public void DeleteAccount(string accountId)
         {
             
         }
