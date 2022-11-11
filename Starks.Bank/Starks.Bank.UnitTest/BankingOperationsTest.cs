@@ -18,10 +18,10 @@ namespace Starks.Bank.UnitTest
         [TestMethod]
         public void Given_Empty_customerName_SHould_throwException()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
 
-            //When
+            // Act and Assert
             Assert.ThrowsException<ArgumentNullException>(() => bankingOperations.CreateAccount(string.Empty, 0));
             
         }
@@ -29,10 +29,13 @@ namespace Starks.Bank.UnitTest
         [TestMethod]
         public void Given_CustomerName_Should_CreateAccount()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
+
+            // Act
             var accountId = bankingOperations.CreateAccount("CustName", 0);
 
+            // Assert
             Assert.IsNotNull(accountId);
             Assert.AreEqual(8,accountId.Length);
 
@@ -41,11 +44,14 @@ namespace Starks.Bank.UnitTest
         [TestMethod]
         public void Should_Not_Create_Duplicate_Account_Numbers()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
+
+            // Act
             var accountId1 = bankingOperations.CreateAccount("CustName", 0);
             var accountId2 = bankingOperations.CreateAccount("CustName", 0);
 
+            // Assert
             Assert.AreNotEqual(accountId1, accountId2);
         }
 
@@ -70,7 +76,7 @@ namespace Starks.Bank.UnitTest
             var custId =bankingOps.CreateAccount(customerId, 0);
             var accountDetails = bankingOps.GetAccountDetails(custId);
 
-            // Arrange
+            // Assert
             Assert.AreEqual(8, accountDetails.Id.Length);
             Assert.AreEqual(0, accountDetails.Balance);
         }
@@ -96,31 +102,35 @@ namespace Starks.Bank.UnitTest
             // Arrange
             var bankingOps = new BankingOperations();
 
-            // Act
-            //Assert
+            // Act and Assert
             Assert.ThrowsException<InvalidOperationException>(() => bankingOps.DeleteAccount("accountId"));
         }
 
         [TestMethod]
         public void Should_Create_Account_with_OpeningBalance()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
-            var accountId = bankingOperations.CreateAccount("CustName", 100);
-            var accounDetails = bankingOperations.GetAccountDetails(accountId);
 
+            // Act
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            // Assert
+            var accounDetails = bankingOperations.GetAccountDetails(accountId);
             Assert.AreEqual(100M, accounDetails.Balance);
         }
 
         [TestMethod]
         public void Deposit_WhenAccountIsValid_AmountShould_BeAddedToBalance()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
             var accountId = bankingOperations.CreateAccount("CustName", 100);
             
+            // Act
             bankingOperations.Deposit(accountId, 1000);
 
+            // Assert
             var accounDetails = bankingOperations.GetAccountDetails(accountId);
             Assert.AreEqual(1100, accounDetails.Balance);
         }
@@ -128,30 +138,33 @@ namespace Starks.Bank.UnitTest
         [TestMethod]
         public void Deposit_WhenAccountIsInValid_ThrowsException()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
             var accountId = bankingOperations.CreateAccount("CustName", 100);
 
+            // Act and Assert
             Assert.ThrowsException<InvalidOperationException>(()=> bankingOperations.Deposit("invalid", 1000));
         }
 
         [TestMethod]
         public void Deposit_WhenAccountIdIsNull_ThrowsException()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
             var accountId = bankingOperations.CreateAccount("CustName", 100);
 
+            // Act and Assert
             Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(null, 1000));
         }
 
         [TestMethod]
         public void Deposit_WhenAccountIsValidAndAmountIsNegative_ThrowsException()
         {
-            // Given
+            // Arrange
             BankingOperations bankingOperations = new BankingOperations();
             var accountId = bankingOperations.CreateAccount("CustName", 100);
 
+            // Act and Assert
             Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(accountId, -1000));
         }
 
