@@ -8,9 +8,9 @@
         {
             accounts = new List<Account>();
         }
-        public Account GetAccountDetails(string customerId)
+        public Account GetAccountDetails(string accountId)
         {
-            var account = accounts.FirstOrDefault(a => a.Id.Equals(customerId));
+            var account = accounts.FirstOrDefault(a => a.Id.Equals(accountId));
             if (account == null)
             {
                 throw new InvalidDataException();
@@ -35,9 +35,9 @@
            return  accountRunningId.ToString("00000000");
         }
 
-        public void DeleteAccount(string custId)
+        public void DeleteAccount(string accountId)
         {
-            
+            accounts.Remove(accounts.First(a => a.Id.Equals(accountId)));
         }
     }
 }

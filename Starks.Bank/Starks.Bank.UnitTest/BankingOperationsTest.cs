@@ -58,18 +58,15 @@ namespace Starks.Bank.UnitTest
         public void Delete_Account_When_AccountIsValid()
         {
             // Arrange
-            var customerId = "CustName";
+            var accountId = "CustName";
             var bankingOps = new BankingOperations();
 
             // Act 
-            var custId = bankingOps.CreateAccount(customerId, 0);
-            //var accountDetails = bankingOps.GetAccountDetails(custId);
-
+            var custId = bankingOps.CreateAccount(accountId, 0);
             bankingOps.DeleteAccount(custId);
 
             // Arrange
-            Assert.AreEqual(custId, accountDetails.Id);
-            Assert.AreEqual(0, accountDetails.Balance);
+            Assert.ThrowsException<InvalidDataException>(() => bankingOps.GetAccountDetails(custId));
         }
 
         [TestMethod]
