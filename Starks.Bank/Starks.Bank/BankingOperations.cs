@@ -64,9 +64,9 @@
             if(account.Balance < amount)
                 throw new InvalidOperationException();
 
-            account.Balance -= amount;
-
-            return 0;
+            account.UpdateBalance(-1 * amount);
+            
+            return amount;
         }
 
         public void Deposit(string accountId, decimal depositAmount)
