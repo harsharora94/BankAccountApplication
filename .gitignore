@@ -3,6 +3,12 @@
 ################################################################################
 
 /.vs
+/Starks.Bank/.vs
+/Starks.Bank/obj
+/Starks.Bank/bin
+/Starks.Bank.UnitTest/bin
+/Starks.Bank.UnitTest/obj
+
 
 # Object files
 *.o
