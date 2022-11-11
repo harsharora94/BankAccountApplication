@@ -51,6 +51,24 @@
             myAccounts.Remove(myAccounts.First(a => a.Id.Equals(accountId)));
         }
 
+        public decimal Withdraw(string accountId, decimal amount)
+        {
+            if (string.IsNullOrEmpty(accountId))
+                throw new ArgumentNullException(nameof (accountId));
+
+            var account =  myAccounts.FirstOrDefault(a => a.Id.Equals(accountId));
+
+            if (account == null || amount <= 0)
+                throw new InvalidOperationException();
+
+            if(account.Balance < amount)
+                throw new InvalidOperationException();
+
+            account.Balance -= amount;
+
+            return 0;
+        }
+
         public void Deposit(string accountId, decimal depositAmount)
         {
             if (depositAmount < 0 || accountId == null)
