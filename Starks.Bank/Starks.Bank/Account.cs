@@ -14,9 +14,14 @@
 
         public decimal Balance { get; private set; }
 
-        internal void UpdateBalance(decimal depositAmount)
+        internal void DepositMoney(decimal depositAmount)
         {
             Balance += depositAmount;
+        }
+
+        internal void WithdrawMoney(decimal withdrawAmount)
+        {
+            Balance -= withdrawAmount;
         }
     }
 }

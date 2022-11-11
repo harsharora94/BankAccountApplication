@@ -64,7 +64,7 @@
             if(account.Balance < amount)
                 throw new InvalidOperationException();
 
-            account.Balance -= amount;
+            account.WithdrawMoney(amount);
 
             return 0;
         }
@@ -77,7 +77,7 @@
             }
 
             var account = myAccounts.First(a => a.Id.Equals(accountId));
-            account.UpdateBalance(depositAmount);
+            account.DepositMoney(depositAmount);
         }
     }
 }
