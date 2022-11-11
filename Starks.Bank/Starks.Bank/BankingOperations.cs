@@ -24,11 +24,8 @@
             {
                 throw new ArgumentNullException("name");
             };
-            Account account = new Account
-            {
-                Id = GetAccountId(),
-                Customer = new Customer { Name = name }
-            };
+            Account account = new Account(GetAccountId(), new Customer() { Name = name });
+            
             accounts.Add(account);
             return account.Id;
         }

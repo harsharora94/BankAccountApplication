@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Starks.Bank
+﻿namespace Starks.Bank
 {
     public class Account
     {
-        public string Id { get; set; }
+        internal Account(string id, Customer customer)
+        {
+            Id = id;
+            Customer = customer;
+        }
+        public string Id { get; }
 
-        public Customer Customer { get; set; }
+        public Customer Customer { get; }
 
-        public decimal Balance { get; set; }
+        public decimal Balance { get; }
     }
 }
