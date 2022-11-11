@@ -50,6 +50,16 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
+        public void Should_Not_Create_account_With_Negative_Balance()
+        {
+            // Arrange
+            BankingOperations bankingOperations = new BankingOperations();
+
+            // Act and Assert
+            Assert.ThrowsException<InvalidOperationException>(()=> bankingOperations.CreateAccount("CustName", -10));
+        }
+
+        [TestMethod]
         public void Get_Account_Details_By_Valid_CustomerId()
         {
             // Arrange
