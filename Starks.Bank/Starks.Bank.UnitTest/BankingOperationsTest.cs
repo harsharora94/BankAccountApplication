@@ -47,7 +47,6 @@ namespace Starks.Bank.UnitTest
             var accountId2 = bankingOperations.CreateAccount("CustName", 0);
 
             Assert.AreNotEqual(accountId1, accountId2);
-
         }
 
         [TestMethod]
@@ -93,7 +92,7 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
-        public void Should_Create_account_with_OpeningBalance()
+        public void Should_Create_Account_with_OpeningBalance()
         {
             // Given
             BankingOperations bankingOperations = new BankingOperations();
