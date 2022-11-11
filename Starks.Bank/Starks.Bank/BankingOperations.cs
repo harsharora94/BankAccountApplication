@@ -66,7 +66,7 @@
 
             account.WithdrawMoney(amount);
 
-            return 0;
+            return amount;
         }
 
         public void Deposit(string accountId, decimal depositAmount)
