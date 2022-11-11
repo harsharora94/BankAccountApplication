@@ -34,7 +34,7 @@ namespace Starks.Bank.UnitTest
             var accountDetails = bankingOps.GetAccountDetails(customerId);
 
             // Arrange
-            Assert.AreEqual(accountDetails.);
+            Assert.AreEqual(customerId, accountDetails.Id);
         }
     }
 }
