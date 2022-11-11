@@ -2,15 +2,17 @@
 {
     public class BankingOperations : IBankingOperations
     {
-        readonly int accountRunningId = 1;
-        readonly List<Account> accounts;
+        private readonly int InitialAccountRunningId = 1;
+        readonly List<Account> myAccounts;
+
         public BankingOperations()
         {
-            accounts = new List<Account>();
+            myAccounts = new List<Account>();
         }
+
         public Account GetAccountDetails(string accountId)
         {
-            var account = accounts.FirstOrDefault(a => a.Id.Equals(accountId));
+            var account = myAccounts.FirstOrDefault(a => a.Id.Equals(accountId));
             if (account == null)
             {
                 throw new InvalidDataException();
@@ -18,26 +20,29 @@
 
             return account;
         }
+
         public string CreateAccount(string name, decimal balance)
         {
             if (string.IsNullOrEmpty(name))
             {
                 throw new ArgumentNullException("name");
-            };
+            }
+
+            ;
             Account account = new Account(GetAccountId(), new Customer() { Name = name }, balance);
-            
-            accounts.Add(account);
+
+            myAccounts.Add(account);
             return account.Id;
         }
 
         private string GetAccountId()
         {
-           return  accountRunningId.ToString("00000000");
+            return InitialAccountRunningId.ToString("00000000");
         }
 
         public void DeleteAccount(string accountId)
         {
-            accounts.Remove(accounts.First(a => a.Id.Equals(accountId)));
+            myAccounts.Remove(myAccounts.First(a => a.Id.Equals(accountId)));
         }
     }
 }
