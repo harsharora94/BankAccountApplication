@@ -63,5 +63,16 @@
 
             return 0;
         }
+
+        public void Deposit(string accountId, decimal depositAmount)
+        {
+            if (depositAmount < 0 || accountId == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var account = myAccounts.First(a => a.Id.Equals(accountId));
+            account.UpdateBalance(depositAmount);
+        }
     }
 }

@@ -103,6 +103,49 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
+        public void Deposit_WhenAccountIsValid_AmountShould_BeAddedToBalance()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+            
+            bankingOperations.Deposit(accountId, 1000);
+
+            var accounDetails = bankingOperations.GetAccountDetails(accountId);
+            Assert.AreEqual(1100, accounDetails.Balance);
+        }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIsInValid_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(()=> bankingOperations.Deposit("invalid", 1000));
+        }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIdIsNull_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(null, 1000));
+        }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIsValidAndAmountIsNegative_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(accountId, -1000));
+        }
+
+        [TestMethod]
         public void Should_Throw_Invalid_Exception_When_Account_Is_Invalid()
         {
             // Given

@@ -12,7 +12,11 @@
 
         public Customer Customer { get; }
 
-        public decimal Balance { get; }
-        
+        public decimal Balance { get; private set; }
+
+        internal void UpdateBalance(decimal depositAmount)
+        {
+            Balance += depositAmount;
+        }
     }
 }
