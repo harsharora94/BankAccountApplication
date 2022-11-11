@@ -1,9 +1,9 @@
 ﻿namespace Starks.Bank
 {
-    public class BankingOperations
+    public class BankingOperations : IBankingOperations
     {
-        int accountRunningId = 1;
-        List<Account> accounts;
+        readonly int accountRunningId = 1;
+        readonly List<Account> accounts;
         public BankingOperations()
         {
             accounts = new List<Account>();
