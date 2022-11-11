@@ -1,0 +1,12 @@
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\bin\Debug\net6.0\Starks.Bank.deps.json
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\bin\Debug\net6.0\Starks.Bank.dll
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\bin\Debug\net6.0\Starks.Bank.pdb
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.csproj.AssemblyReference.cache
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.AssemblyInfoInputs.cache
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.AssemblyInfo.cs
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.csproj.CoreCompileInputs.cache
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.dll
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\refint\Starks.Bank.dll
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\Starks.Bank.pdb
+C:\Users\z0045azz\Source\Repos\BankAccountApplication\Starks.Bank\Starks.Bank\obj\Debug\net6.0\ref\Starks.Bank.dll

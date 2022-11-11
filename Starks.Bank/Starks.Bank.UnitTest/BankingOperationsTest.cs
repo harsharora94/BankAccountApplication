@@ -10,11 +10,8 @@ namespace Starks.Bank.UnitTest
             var customerId = "";
             var bankingOps = new BankingOperations();
 
-            // Act
-            var accountDetails = bankingOps.GetAccountDetails(customerId);
-
-            // Assert
-            Assert.IsNotNull(accountDetails);
+            // Act and Assert
+            Assert.ThrowsException<InvalidDataException>(() => bankingOps.GetAccountDetails(customerId));
         }
     }
 }

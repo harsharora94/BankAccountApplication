@@ -2,9 +2,9 @@
 {
     public class BankingOperations
     {
-        public  GetAccountDetails(string customerId)
+        public Account GetAccountDetails(string customerId)
         {
-            return string.Empty;
+            throw new InvalidDataException();
         }
     }
 }
