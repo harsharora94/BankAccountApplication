@@ -5,7 +5,7 @@ namespace Starks.Bank.UnitTest
     public class BankingOperationsTest
     {
         [TestMethod]
-        public void Get_Account_Details_By_CustomerId()
+        public void Get_Account_Details_By_Invalid_CustomerId_Throws_Exception()
         {
             // Arrange
             var customerId = "";
@@ -36,6 +36,21 @@ namespace Starks.Bank.UnitTest
             Assert.IsNotNull(accountId);
             Assert.AreEqual(8,accountId.Length);
 
+        }
+
+        [TestMethod]
+        public void Get_Account_Details_By_Valid_CustomerId()
+        {
+            // Arrange
+            var customerId = "";
+            var bankingOps = new BankingOperations();
+
+            // Act 
+            var accountDetails = bankingOps.GetAccountDetails(customerId);
+
+            // Arrange
+            Assert.AreEqual(customerId, accountDetails.Id);
+            Assert.AreEqual(0, accountDetails.Balance);
         }
     }
 }

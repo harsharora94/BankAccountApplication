@@ -8,8 +8,10 @@ namespace Starks.Bank
 {
     public class Account
     {
-        public string Id { get; set; }
+        public string Id { get; }
 
-         public Customer Customer { get; set; }
+        public Customer Customer { get; }
+
+        public decimal Balance { get; }
     }
 }
