@@ -39,6 +39,17 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
+        public void Should_Not_Create_Duplicate_Account_Numbers()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId1 = bankingOperations.CreateAccount("CustName", 0);
+            var accountId2 = bankingOperations.CreateAccount("CustName", 0);
+
+            Assert.AreNotEqual(accountId1, accountId2);
+        }
+
+        [TestMethod]
         public void Get_Account_Details_By_Valid_CustomerId()
         {
             // Arrange
@@ -81,7 +92,7 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
-        public void Should_Create_account_with_OpeningBalance()
+        public void Should_Create_Account_with_OpeningBalance()
         {
             // Given
             BankingOperations bankingOperations = new BankingOperations();
