@@ -35,6 +35,7 @@ namespace Starks.Bank.UnitTest
 
             // Arrange
             Assert.AreEqual(customerId, accountDetails.Id);
+            Assert.AreEqual(0, accountDetails.Balance);
         }
     }
 }
