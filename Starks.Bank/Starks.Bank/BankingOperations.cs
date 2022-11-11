@@ -1,6 +1,6 @@
 ﻿namespace Starks.Bank
 {
-    public class Class1
+    public class BankingOperations
     {
 
     }
