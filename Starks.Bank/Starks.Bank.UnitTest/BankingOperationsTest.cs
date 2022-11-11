@@ -70,6 +70,17 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
+        public void Delete_Account_When_AccountIsNot_Existing_ThrowsException()
+        {
+            // Arrange
+            var bankingOps = new BankingOperations();
+
+            // Act
+            //Assert
+            Assert.ThrowsException<InvalidOperationException>(() => bankingOps.DeleteAccount("accountId"));
+        }
+
+        [TestMethod]
         public void Should_Create_account_with_OpeningBalance()
         {
             // Given
