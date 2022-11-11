@@ -22,3 +22,5 @@
 *.user
 *.userosscache
 *.sln.docstates
+/Starks.Bank/Starks.Bank/obj
+/Starks.Bank/Starks.Bank.UnitTest
