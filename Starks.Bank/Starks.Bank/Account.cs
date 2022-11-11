@@ -13,5 +13,6 @@
         public Customer Customer { get; }
 
         public decimal Balance { get; }
+        
     }
 }
