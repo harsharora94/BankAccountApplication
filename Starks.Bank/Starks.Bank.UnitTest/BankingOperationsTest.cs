@@ -42,14 +42,15 @@ namespace Starks.Bank.UnitTest
         public void Get_Account_Details_By_Valid_CustomerId()
         {
             // Arrange
-            var customerId = "";
+            var customerId = "CustName";
             var bankingOps = new BankingOperations();
 
             // Act 
-            var accountDetails = bankingOps.GetAccountDetails(customerId);
+            var custId =bankingOps.CreateAccount(customerId, 0);
+            var accountDetails = bankingOps.GetAccountDetails(custId);
 
             // Arrange
-            Assert.AreEqual(customerId, accountDetails.Id);
+            Assert.AreEqual(custId, accountDetails.Id);
             Assert.AreEqual(0, accountDetails.Balance);
         }
     }

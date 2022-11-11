@@ -10,7 +10,13 @@
         }
         public Account GetAccountDetails(string customerId)
         {
-            throw new InvalidDataException();
+            var account = accounts.FirstOrDefault(a => a.Id.Equals(customerId));
+            if (account == null)
+            {
+                throw new InvalidDataException();
+            }
+
+            return account;
         }
         public string CreateAccount(string name, decimal balance)
         {
@@ -18,11 +24,12 @@
             {
                 throw new ArgumentNullException("name");
             };
-            Account account = new Account {
+            Account account = new Account
+            {
                 Id = GetAccountId(),
                 Customer = new Customer { Name = name }
-            
             };
+            accounts.Add(account);
             return account.Id;
         }
 
