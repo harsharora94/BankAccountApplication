@@ -8,3 +8,19 @@
 /Starks.Bank/bin
 /Starks.Bank.UnitTest/bin
 /Starks.Bank.UnitTest/obj
+
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+/Starks.Bank/Starks.Bank/obj
+/Starks.Bank/Starks.Bank.UnitTest

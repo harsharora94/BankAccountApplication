@@ -15,6 +15,15 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
+        public void Given_Customer_Name_When_Create_Account_Then_Return_Unique_AccountId()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+
+            //When
+        }
+
+        [TestMethod]
         public void Get_Account_Details_By_Valid_CustomerId()
         {
             // Arrange

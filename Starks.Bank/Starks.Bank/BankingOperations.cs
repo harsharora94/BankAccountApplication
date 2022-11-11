@@ -6,5 +6,9 @@
         {
             throw new InvalidDataException();
         }
+        public string CreateAccount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
