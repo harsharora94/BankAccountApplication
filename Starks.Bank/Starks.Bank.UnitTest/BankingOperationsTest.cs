@@ -4,6 +4,17 @@ namespace Starks.Bank.UnitTest
     public class BankingOperationsTest
     {
         [TestMethod]
+        public void Get_Account_Details_By_CustomerId()
+        {
+            // Arrange
+            var customerId = "";
+            var bankingOps = new BankingOperations();
+
+            // Act and Assert
+            Assert.ThrowsException<InvalidDataException>(() => bankingOps.GetAccountDetails(customerId));
+        }
+
+        [TestMethod]
         public void Given_Customer_Name_When_Create_Account_Then_Return_Unique_AccountId()
         {
             // Given
