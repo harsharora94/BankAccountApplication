@@ -9,7 +9,7 @@
 
         public string CreateAccount()
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }
