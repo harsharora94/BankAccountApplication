@@ -4,8 +4,12 @@ namespace Starks.Bank.UnitTest
     public class BankingOperationsTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Given_Customer_Name_When_Create_Account_Then_Return_Unique_AccountId()
         {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+
+            //When
         }
     }
 }
