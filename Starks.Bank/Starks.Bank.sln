@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starks.Bank", "Starks.Bank\Starks.Bank.csproj", "{7B4E02F8-CDB3-4841-A581-186A0B5A6C44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starks.Bank.UnitTest", "Starks.Bank.UnitTest\Starks.Bank.UnitTest.csproj", "{06877A9A-3E86-43C9-A4DC-3CE96A1C77F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B4E02F8-CDB3-4841-A581-186A0B5A6C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4E02F8-CDB3-4841-A581-186A0B5A6C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4E02F8-CDB3-4841-A581-186A0B5A6C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06877A9A-3E86-43C9-A4DC-3CE96A1C77F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06877A9A-3E86-43C9-A4DC-3CE96A1C77F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06877A9A-3E86-43C9-A4DC-3CE96A1C77F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06877A9A-3E86-43C9-A4DC-3CE96A1C77F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
