@@ -4,5 +4,7 @@
 
 /.vs
 /Starks.Bank/.vs
-/Starks.Bank/.obj
-/Starks.Bank.UnitTest/.obj
+/Starks.Bank/obj
+/Starks.Bank/bin
+/Starks.Bank.UnitTest/bin
+/Starks.Bank.UnitTest/obj
