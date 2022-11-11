@@ -50,8 +50,19 @@ namespace Starks.Bank.UnitTest
             var accountDetails = bankingOps.GetAccountDetails(custId);
 
             // Arrange
-            Assert.AreEqual(custId, accountDetails.Id);
+            Assert.AreEqual(8, accountDetails.Id.Length);
             Assert.AreEqual(0, accountDetails.Balance);
+        }
+
+        [TestMethod]
+        public void Should_Create_account_with_OpeningBalance()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+            var accounDetails = bankingOperations.GetAccountDetails(accountId);
+
+            Assert.AreEqual(100M, accounDetails.Balance);
         }
     }
 }
