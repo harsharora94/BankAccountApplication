@@ -11,5 +11,7 @@ namespace Starks.Bank
         string Id { get; }
 
         Customer Customer { get; }
+
+        decimal Balance { get; }
     }
 }
