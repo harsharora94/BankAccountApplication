@@ -37,7 +37,7 @@
 
         public void DeleteAccount(string accountId)
         {
-            
+            accounts.Remove(accounts.First(a => a.Id.Equals(accountId)));
         }
     }
 }
