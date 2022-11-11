@@ -1,3 +1,4 @@
+
 namespace Starks.Bank.UnitTest
 {
     [TestClass]
@@ -15,12 +16,26 @@ namespace Starks.Bank.UnitTest
         }
 
         [TestMethod]
-        public void Given_Customer_Name_When_Create_Account_Then_Return_Unique_AccountId()
+        public void Given_Empty_customerName_SHould_throwException()
         {
             // Given
             BankingOperations bankingOperations = new BankingOperations();
 
             //When
+            Assert.ThrowsException<ArgumentNullException>(() => bankingOperations.CreateAccount(string.Empty, 0));
+            
+        }
+
+        [TestMethod]
+        public void Given_CustomerName_Should_CreateAccount()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 0);
+
+            Assert.IsNotNull(accountId);
+            Assert.AreEqual(8,accountId.Length);
+
         }
     }
 }

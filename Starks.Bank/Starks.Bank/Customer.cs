@@ -8,6 +8,6 @@ namespace Starks.Bank
 {
     public class Customer
     {
-        public string Name { get; }
+        public string Name { get; set; }
     }
 }

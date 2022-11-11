@@ -8,8 +8,8 @@ namespace Starks.Bank
 {
     public class Account
     {
-        string Id { get; }
+        public string Id { get; set; }
 
-        Customer Customer { get; }
+         public Customer Customer { get; set; }
     }
 }
