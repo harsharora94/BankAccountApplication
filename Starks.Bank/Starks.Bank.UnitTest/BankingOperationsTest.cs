@@ -114,5 +114,35 @@ namespace Starks.Bank.UnitTest
             var accounDetails = bankingOperations.GetAccountDetails(accountId);
             Assert.AreEqual(1100, accounDetails.Balance);
         }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIsInValid_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(()=> bankingOperations.Deposit("invalid", 1000));
+        }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIdIsNull_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(null, 1000));
+        }
+
+        [TestMethod]
+        public void Deposit_WhenAccountIsValidAndAmountIsNegative_ThrowsException()
+        {
+            // Given
+            BankingOperations bankingOperations = new BankingOperations();
+            var accountId = bankingOperations.CreateAccount("CustName", 100);
+
+            Assert.ThrowsException<InvalidOperationException>(() => bankingOperations.Deposit(accountId, -1000));
+        }
     }
 }
