@@ -2,10 +2,11 @@
 {
     public class Account
     {
-        internal Account(string id, Customer customer)
+        internal Account(string id, Customer customer, decimal balance)
         {
             Id = id;
             Customer = customer;
+            Balance = balance;
         }
         public string Id { get; }
 
