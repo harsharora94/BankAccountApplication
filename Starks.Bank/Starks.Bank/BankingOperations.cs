@@ -2,7 +2,7 @@
 {
     public class BankingOperations : IBankingOperations
     {
-        private readonly int InitialAccountRunningId = 1;
+        private int InitialAccountRunningId = 0;
         readonly List<Account> myAccounts;
 
         public BankingOperations()
@@ -29,14 +29,15 @@
             }
 
             ;
-            Account account = new Account(GetAccountId(), new Customer() { Name = name }, balance);
+            Account account = new Account(CreateUniqueAccountId(), new Customer() { Name = name }, balance);
 
             myAccounts.Add(account);
             return account.Id;
         }
 
-        private string GetAccountId()
+        private string CreateUniqueAccountId()
         {
+            InitialAccountRunningId++;
             return InitialAccountRunningId.ToString("00000000");
         }
 
