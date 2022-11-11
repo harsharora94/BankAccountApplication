@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Starks.Bank
 {
-    public class Money
+    public class Customer
     {
-        public uint Rupee { get; }
-        public uint Paise { get; }
-
+        public string Name { get; }
     }
 }

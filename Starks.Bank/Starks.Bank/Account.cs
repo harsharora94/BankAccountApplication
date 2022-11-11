@@ -9,5 +9,7 @@ namespace Starks.Bank
     public class Account
     {
         string Id { get; }
+
+        Customer Customer { get; }
     }
 }
