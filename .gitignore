@@ -2,25 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/Starks.Bank/.vs
-/Starks.Bank/obj
-/Starks.Bank/bin
-/Starks.Bank.UnitTest/bin
-/Starks.Bank.UnitTest/obj
-
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-/Starks.Bank/Starks.Bank/obj
-/Starks.Bank/Starks.Bank.UnitTest
+.vs/
+Starks.Bank/.vs/
+Starks.Bank/Starks.Bank/obj/
+Starks.Bank/Starks.Bank.UnitTest/obj/
+Starks.Bank/Starks.Bank/bin/
+Starks.Bank/Starks.Bank.UnitTest/bin/
