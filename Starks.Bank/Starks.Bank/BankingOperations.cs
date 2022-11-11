@@ -28,6 +28,11 @@
                 throw new ArgumentNullException("name");
             }
 
+            if (balance < 0)
+            {
+                throw new InvalidOperationException();
+            }
+
             ;
             Account account = new Account(CreateUniqueAccountId(), new Customer() { Name = name }, balance);
 
